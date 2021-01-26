@@ -8,6 +8,7 @@ class Ground{
     this.width=width
     this.height=height
     this.body=Bodies.rectangle(x,y,width,height,option)
+    
     World.add(world,this.body)
     }
     display(){

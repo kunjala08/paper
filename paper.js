@@ -1,5 +1,5 @@
 class paper {
-    constructor(x,y,r){
+    constructor(x,y,r,height){
     var options={
         isStatic:false,
         restitution:0.3,
@@ -10,7 +10,10 @@ class paper {
         this.x = x;
         this.y = y;
         this.r = r;
-        this.body=Bodies.circle(this.x,this.y,this.r,options);
+      //  this.height=height;
+        this.body=Bodies.circle(this.x,this.y,(this.r-20)/2,options);
+        this.image = loadImage("paper.png");
+        
         World.add(world,this.body)
     }
 
@@ -20,8 +23,9 @@ class paper {
         push();
         translate(pos.x,pos.y);
         fill("pink");
-        ellipseMode(RADIUS);
-        ellipse(0,0,this.r);
+        imageMode(CENTER);
+        image(this.image,0,0,this.r,this.r)
+        this.body.debug=true
         pop();
 }
 
