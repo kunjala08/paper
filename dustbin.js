@@ -9,18 +9,16 @@ class dustbin{
     this.width=width
     this.height=height
     this.body=Bodies.rectangle(x,y,width,height,option)
-    this.image = loadImage("dustbingreen.png")
+   // this.image = loadImage("dustbingreen.png")
     World.add(world,this.body)
     }
     display(){
         var pos = this.body.position;
         push();
     
-      //  fill("white");
-        imageMode(CENTER);
-        image(this.image,pos.x,pos.y,this.width,this.height)
-        image.height = 100
-        this.image.width = 29
+        fill("white");
+        rect(CENTER);
+        rect(pos.x,pos.y,this.width,this.height)
         pop();
 
 
